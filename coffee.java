@@ -11,9 +11,14 @@ class Coffee
     int result = price;
     while(price != 0)
     {
-      int  temp = price - (int)(disc/100)*price ; 
-      result += temp;
-      price = temp;
+      int  temp = price*disc/100 ; 
+	    if(temp!=0){
+	      temp = price -temp;
+        result += temp;
+        price = temp;
+	    }else{
+		    break;
+	    }
     }
     System.out.println(result);
   }
